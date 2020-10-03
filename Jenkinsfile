@@ -48,15 +48,13 @@ pipeline {
 
 	stage('SonarQube'){
 
-         steps{
+		steps{
+		 withSonarQubeEnv('SonarQube') {
 
-            bat label: '', script: '''mvn sonar:sonar \
-
-		 -Dsonar.host.url=http://192.168.0.139:9000 \
-
- 		-Dsonar.login=e2036db293247cc969d108f1b42e6378c9dd9ec5'''
+            bat label: '', script: '''mvn sonar:sonar'''
 
           }
+	 }
 
       }
 	    stage('Jmeter'){
