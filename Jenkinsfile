@@ -59,6 +59,13 @@ pipeline {
           }
 
       }
+	    stage('Jmeter'){
+         steps{
+	    // cd 	 C:\Program Files\apache-jmeter-5.3\bin
+            bat label: 'jmeter',script:'C:\\Users\\natreddy\\Documents\\apache-jmeter-5.3\\bin\\jmeter -n -Jjmeter.save.saveservice.output_format=xml -t C:\\Users\\natreddy\\Documents\\jmetertestplans\\SpringJpaApp.jmx C:\\Users\\natreddy\\Documents\\jmetertestplans\\Test-emp.jtl'
+          perfReport filterRegex: '', sourceDataFiles: 'C:\\Users\\natreddy\\Documents\\jmetertestplans\\Test-emp.jtl'
+	 }
+	}
 
 	  stage("Quality Gate") {
             steps {
@@ -69,13 +76,7 @@ pipeline {
                 }
             }
         }
-	  stage('Jmeter'){
-         steps{
-	    // cd 	 C:\Program Files\apache-jmeter-5.3\bin
-            bat label: 'jmeter',script:'C:\\Users\\natreddy\\Documents\\apache-jmeter-5.3\\bin\\jmeter -n -Jjmeter.save.saveservice.output_format=xml -t C:\\Users\\natreddy\\Documents\\jmetertestplans\\SpringJpaApp.jmx C:\\Users\\natreddy\\Documents\\jmetertestplans\\Test-emp.jtl'
-          perfReport filterRegex: '', sourceDataFiles: 'C:\\Users\\natreddy\\Documents\\jmetertestplans\\Test-emp.jtl'
-	 }
-	}
+	
 
 	stage('Maven Package'){
 
