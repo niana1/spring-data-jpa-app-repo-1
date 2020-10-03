@@ -67,15 +67,15 @@ pipeline {
 	 }
 	}
 
-	  stage("Quality Gate") {
-            steps {
-                timeout(time: 1, unit: 'HOURS') {
+//	  stage("Quality Gate") {
+  //          steps {
+    //            timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
-                }
-            }
-        }
+      //              waitForQualityGate abortPipeline: true
+        //        }
+          //  }
+        //}
 	
 
 	stage('Maven Package'){
@@ -90,25 +90,25 @@ pipeline {
 
 	} 		
 
-	  stage('Ok') {
-            steps {
-                echo "Ok"
-            }
-        }
+//	  stage('Ok') {
+  //          steps {
+    //            echo "Ok"
+      //      }
+        //}
     
 
   }
 
-	 post {
-        success {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
-	     failure {
-        mail to: 'suchithranathi@gmail.com',
-             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             body: "Something is wrong with ${env.BUILD_URL}"
-    }
-    }
+//	 post {
+  //      success {
+    //        emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+      //  }
+	//     failure {
+       // mail to: 'suchithranathi@gmail.com',
+        //     subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+         //    body: "Something is wrong with ${env.BUILD_URL}"
+    //}
+    //}
 	
 	
 }
