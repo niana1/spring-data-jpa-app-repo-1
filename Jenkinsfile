@@ -52,7 +52,7 @@ pipeline {
 
             bat label: '', script: '''mvn sonar:sonar \
 
-		 -Dsonar.host.url=http://192.168.0.139:9000/ \
+		 -Dsonar.host.url=http://192.168.0.139:9000 \
 
  		-Dsonar.login=e2036db293247cc969d108f1b42e6378c9dd9ec5'''
 
