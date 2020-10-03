@@ -43,13 +43,6 @@ pipeline {
 		}
 
 	}
-	   stage('Jmeter'){
-         steps{
-	    // cd 	 C:\Program Files\apache-jmeter-5.3\bin
-            bat label: 'jmeter',script:'C:\\Users\\natreddy\\Documents\\apache-jmeter-5.3\\bin\\jmeter -n -Jjmeter.save.saveservice.output_format=xml -t C:\\Users\\natreddy\\Documents\\jmetertestplans\\Test Plan.jmx -l C:\\Users\\natreddy\\Documents\\jmeter-test-results\\test-demo.jtl'
-   
-          }
-	}
 
 	  
 
