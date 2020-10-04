@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+spring-data-jpa-app,com.sapient.training.app,SpringDataJpaAppApplication,5,3,0,0,2,1,1,1,1,1
+spring-data-jpa-app,com.sapient.training.controller,EmployeeRestController,40,57,0,0,10,11,0,7,0,7
+spring-data-jpa-app,com.sapient.training.exception,EmployeeException,7,7,0,0,4,3,2,2,2,2
+spring-data-jpa-app,com.sapient.training.exception,RestResponseEntityExceptionHandler,33,3,0,0,4,1,2,1,2,1
+spring-data-jpa-app,com.sapient.training.service,EmployeeServiceImpl,55,87,1,9,14,24,2,12,1,8
+spring-data-jpa-app,com.sapient.training.entity,Employee,22,55,0,0,9,24,2,12,2,12
